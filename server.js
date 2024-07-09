@@ -23,7 +23,7 @@ app.use(express.json());
 app.use("/leaves", leavesRoutes);
 app.use("/events", eventsRoutes);
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("newleaf server up and running!");
 });
 
