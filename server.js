@@ -11,7 +11,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://localhost:5174";
+const CORS_ORIGIN =
+  process.env.CORS_ORIGIN ||
+  "https://localhost:5174" ||
+  "https://new-leaf.info/";
 
 app.use(
   cors({
