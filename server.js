@@ -11,9 +11,21 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
-const CORS_ORIGINS = process.env.CORS_ORIGINS;
+const CORS_ORIGINS = (process.env.CORS_ORIGINS || "").split(",");
 
-app.use(cors({ origin: CORS_ORIGINS }));
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || CORS_ORIGINS.includes(origin)) {
+      return callback(null, true);
+    }
+    const msg =
+      "The CORS policy for this site does not allow access from the specified Origin.";
+    return callback(new Error(msg), false);
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/leaves", leavesRoutes);
