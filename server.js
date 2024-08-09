@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
-const CORS_ORIGINS = process.env.CORS_ORIGINS.split(",");
+const CORS_ORIGINS = (process.env.CORS_ORIGINS || "").split(",");
 
 const corsOptions = {
   origin: function (origin, callback) {
