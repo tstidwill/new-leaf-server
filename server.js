@@ -2,11 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 const dotenv = require("dotenv");
+const path = require("path");
 const knex = require("knex")(require("./knexfile"));
 const leavesRoutes = require("./routes/leaves-routes");
 const eventsRoutes = require("./routes/events-routes");
 
-dotenv.config();
+const envFile =
+  process.env.NODE_ENV === "production"
+    ? ".env.production"
+    : ".env.development";
+dotenv.config({ path: path.resolve(__dirname, envFile) });
 
 const app = express();
 const port = process.env.PORT || 8080;
