@@ -19,7 +19,10 @@ const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
 const CORS_ORIGINS = (process.env.CORS_ORIGINS || "").split(",");
 
 app.use((req, res, next) => {
-  if (req.headers["x-forwarded-proto"] !== "https") {
+  if (
+    req.headers["x-forwarded-proto"] !== "https" &&
+    process.env.NODE_ENV === "production"
+  ) {
     return res.redirect(`https://${req.headers.host}${req.url}`);
   }
   next();
