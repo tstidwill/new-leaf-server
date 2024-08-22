@@ -88,20 +88,20 @@ VITE_GOOGLE_MAPS_API_KEY=your_api_key
 
 #### Landing Page
 
-![](src/assets/mockups/Landing_Mobile
+![](assets/mockups/Landing_Mobile
 .png)
-![](src/assets/mockups/Landing_Desktop
+![](assets/mockups/Landing_Desktop
 .png)
 
 #### Map locations & events
 
-![](src/assets/mockups/Discover_Mobile.png)
-![](src/assets/mockups/Discover_Desktop.png)
+![](assets/mockups/Discover_Mobile.png)
+![](assets/mockups/Discover_Desktop.png)
 
 #### Events
 
-![](src/assets/mockups/Events_Mobile.png)
-![](src/assets/mockups/Events_Desktop.png)
+![](assets/mockups/Events_Mobile.png)
+![](assets/mockups/Events_Desktop.png)
 
 ### Endpoints
 
